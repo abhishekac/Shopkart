@@ -2,9 +2,7 @@ package login;
 
 import java.awt.*;
 import java.awt.event.*;
-import java.io.File;
 import java.io.IOException;
-import java.net.URISyntaxException;
 import java.sql.*;
 import java.util.Enumeration;
 import javax.imageio.ImageIO;
@@ -79,9 +77,9 @@ public class FrontPage extends JFrame {
 
 	private void init() {
 		try {
-			Image img = ImageIO.read(new File(FrontPage.class.getResource("/image/bag0.jpg").toURI()));
+			Image img = ImageIO.read(FrontPage.class.getResourceAsStream("/image/bag0.jpg"));
 			setIconImage(img);
-		} catch (IOException | URISyntaxException e) {
+		} catch (IOException e) {
 			e.printStackTrace();
 		}
 		setSize(new Dimension(1366, 735));

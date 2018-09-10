@@ -9,9 +9,7 @@ import java.awt.Font;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.File;
 import java.io.IOException;
-import java.net.URISyntaxException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -91,12 +89,9 @@ public class LoginPage extends JFrame {
 	
 	private void initLoginPage() {
 		try {
-			File file = new File(LoginPage.class.getResource("/image/bag0.jpg").toURI());
-			Image img = ImageIO.read(file);
+			Image img = ImageIO.read(LoginPage.class.getResourceAsStream("/image/bag0.jpg"));
 			setIconImage(img);
 		} catch (IOException e) {
-			e.printStackTrace();
-		} catch (URISyntaxException e) {
 			e.printStackTrace();
 		}
 		setSize(new Dimension(1366, 735));
